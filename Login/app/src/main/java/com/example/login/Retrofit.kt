@@ -6,6 +6,10 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
+/**
+ * Retrofit client class which has an companion function that returns the client to make
+ * API requests.
+ */
 class Retrofit {
     companion object {
 

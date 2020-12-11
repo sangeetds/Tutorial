@@ -11,7 +11,7 @@
     <string name="register">Register</string>
     <string name="sign_in">Sign in</string>
     <string name="welcome">Welcome!</string>
-    <string name="url">http://localhost:8080</string>
+    <string name="url">http://10.0.2.2:8080</string>
     <string name="username">Username</string>
     <string name="loggedIn">Logged In!</string>
     <string name="created">Account Created!</string>

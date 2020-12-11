@@ -1,16 +1,22 @@
 package com.example.login
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
-import android.text.method.TransformationMethod
 import android.util.Patterns
 import android.widget.*
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
+/**
+ * Class where user enter his/her login credentials to register to the service
+ */
 class RegisterActivity : AppCompatActivity() {
+
+    /**
+     * View that will hold our login, password and email details along with buttons for sign-up,
+     * returning and showing passwords.
+     */
     private lateinit var emailText: EditText
     private lateinit var signUpButton: FloatingActionButton
     private lateinit var nameText: EditText
@@ -18,6 +24,10 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var backButton: ImageButton
     private lateinit var showPasswordButton: CheckBox
 
+    /**
+     * On creation of the view, respective bindings are done and the button have been assigned
+     * their respective responsibilities.
+     */
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -31,6 +41,10 @@ class RegisterActivity : AppCompatActivity() {
 
         signUpButton.setOnClickListener { signUp() }
         backButton.setOnClickListener { onBackPressed() }
+
+        /**
+         * Simple workaround to show/hide password
+         */
         showPasswordButton.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 passwordText.transformationMethod = HideReturnsTransformationMethod.getInstance()
@@ -39,12 +53,21 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * To go back to the screen
+     */
     override fun onBackPressed() {
         super.onBackPressed()
         finish()
     }
 
+    /**
+     * Helper function to display the dialog and check the status of the sign-up activity
+     */
     private fun signUp() {
+        /**
+         * A simple validation of the credentials
+         */
         if (!validate()) {
             onSignUpFailed()
             return
@@ -66,6 +89,11 @@ class RegisterActivity : AppCompatActivity() {
         signUpButton.isEnabled = true
     }
 
+
+    /**
+     * Returns true or false depending on whether the credentials are according to some
+     * pre-defined rules.
+     */
     private fun validate(): Boolean {
         var valid = true
         val name = nameText.text.toString()

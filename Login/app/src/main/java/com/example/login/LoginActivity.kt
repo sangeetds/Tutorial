@@ -1,6 +1,5 @@
 package com.example.login
 
-import android.media.Image
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,15 +10,26 @@ import android.view.View
 import android.widget.*
 import androidx.annotation.RequiresApi
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlin.reflect.jvm.internal.impl.util.Check
 
+/**
+ * Class where user enter his/her login credentials to log in to the service
+ */
 class LoginActivity : AppCompatActivity() {
+
+    /**
+     * View that will hold our login, password details along with buttons for logging, returning
+     * and showing passwords.
+     */
     private lateinit var userNameText: EditText
     private lateinit var passwordText: EditText
     private lateinit var loginButton: FloatingActionButton
     private lateinit var backButton: ImageButton
     private lateinit var showPasswordButton: CheckBox
 
+    /**
+     * On creation of the view, respective bindings are done and the button have been assigned
+     * their respective responsibilities.
+     */
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +52,9 @@ class LoginActivity : AppCompatActivity() {
             onBackPressed()
         }
 
+        /**
+         * Simple workaround to show/hide password
+         */
         showPasswordButton.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 passwordText.transformationMethod = HideReturnsTransformationMethod.getInstance()
@@ -50,7 +63,13 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Helper function to display the dialog and check the status of the login activity
+     */
     private fun login() {
+        /**
+         * A simple validation of the credentials
+         */
         if (!validate()) {
             onLoginFailed()
             return
@@ -66,6 +85,9 @@ class LoginActivity : AppCompatActivity() {
         progressDialog.show()
     }
 
+    /**
+     * To go back to the screen
+     */
     override fun onBackPressed() {
         super.onBackPressed()
         finish()
@@ -76,6 +98,10 @@ class LoginActivity : AppCompatActivity() {
         loginButton.isEnabled = true
     }
 
+    /**
+     * Returns true or false depending on whether the credentials are according to some
+     * pre-defined rules.
+     */
     private fun validate(): Boolean {
         var valid = true
         val email = userNameText.text.toString()

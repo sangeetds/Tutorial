@@ -5,9 +5,14 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 
-
+/**
+ * The opening activity which gives user the option to either register or log-in.
+ */
 class MainActivity : AppCompatActivity() {
 
+    /**
+     * On creation, it binds the register and login buttons.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
