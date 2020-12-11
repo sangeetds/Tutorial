@@ -12,7 +12,7 @@ public class User {
     private @Id @GeneratedValue(strategy = GenerationType.AUTO) long id;
     private @NotBlank String username;
     private @NotBlank String password;
-    private @NotBlank @Email String email;
+    private @Email String email;
     private boolean loggedIn;
 
     public User() {
@@ -22,6 +22,15 @@ public class User {
                 @NotBlank String password) {
         this.username = username;
         this.password = password;
+        this.loggedIn = false;
+    }
+
+    public User(@NotBlank String username,
+                @NotBlank String password,
+                @NotBlank String email) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
         this.loggedIn = false;
     }
 
@@ -67,8 +76,7 @@ public class User {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
         return username.equals(user.username) &&
-                password.equals(user.password) &&
-                email.equals(user.email);
+                password.equals(user.password);
     }
 
     @Override

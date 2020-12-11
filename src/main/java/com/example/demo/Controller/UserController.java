@@ -20,17 +20,13 @@ public class UserController {
 
     @PostMapping("/users/register")
     public Status registerUser(@Valid @RequestBody User newUser) {
+        System.out.println(newUser);
         List<User> users = userRepository.findAll();
-        System.out.println("New user: " + newUser.toString());
 
-        for (User user : users) {
-            System.out.println("Registered user: " + newUser.toString() + " " + user.equals(newUser));
+        if (newUser.getEmail() == null) return Status.FAILURE;
 
-            System.out.println(user.getUsername() + " " + newUser.getUsername() + " " + user.getUsername().equals(newUser.getUsername()));
-            System.out.println(user.getPassword() + " " + newUser.getPassword() + " " + user.getPassword().equals(newUser.getPassword()));
-            System.out.println(user.getEmail() + " " + newUser.getEmail() + " " + user.getEmail().equals(newUser.getEmail()));
-
-            if (user.equals(newUser)) {
+        for (User user: users) {
+            if (user.equals(newUser) && user.getEmail().equals(newUser.getEmail())) {
                 System.out.println("User Already exists!");
                 return Status.USER_ALREADY_EXISTS;
             }
@@ -43,8 +39,10 @@ public class UserController {
     @PostMapping("/users/login")
     public Status loginUser(@Valid @RequestBody User user) {
         List<User> users = userRepository.findAll();
+        System.out.println(user);
 
         for (User other : users) {
+            System.out.println(other);
             if (other.equals(user)) {
                 user.setLoggedIn(true);
                 userRepository.save(user);
