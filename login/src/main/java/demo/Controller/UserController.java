@@ -1,8 +1,8 @@
-package com.example.demo.Controller;
+package demo.Controller;
 
-import com.example.demo.Status;
-import com.example.demo.Model.User;
-import com.example.demo.Repository.UserRepository;
+import demo.Status;
+import demo.Model.User;
+import demo.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;

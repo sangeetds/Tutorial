@@ -1,4 +1,4 @@
-package com.example.demo.Model;
+package demo.Model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;

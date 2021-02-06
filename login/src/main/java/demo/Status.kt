@@ -1,6 +1,6 @@
-package com.example.demo;
+package demo;
 
-public enum Status {
+enum class Status {
     SUCCESS,
     USER_ALREADY_EXISTS,
     FAILURE
