@@ -6,7 +6,8 @@
 
 plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin.
-    id("org.jetbrains.kotlin.jvm")
+    kotlin("jvm")
+    kotlin("plugin.spring")
 
     // Apply the application plugin to add support for building a CLI application.
     application
@@ -20,7 +21,11 @@ repositories {
 
 dependencies {
     implementation(project(":login"))
+
+    implementation(kotlin("reflect"))
+
     implementation("org.springframework.boot:spring-boot:2.4.0")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.4.0")
     implementation("org.springframework.boot:spring-boot-starter-web:2.4.0")
     implementation("org.springframework.boot:spring-boot-starter-validation:2.4.0")
 }

@@ -1,5 +1,6 @@
 package login.model
 
+import org.springframework.boot.context.properties.ConfigurationProperties
 import javax.persistence.*
 import javax.validation.constraints.Email
 import javax.validation.constraints.NotBlank

@@ -4,6 +4,7 @@ import login.model.User
 import login.repository.UserRepository
 import login.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 import org.springframework.stereotype.Service
 
 @Service

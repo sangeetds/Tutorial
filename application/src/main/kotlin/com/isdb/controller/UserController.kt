@@ -1,4 +1,4 @@
-package controller
+package com.isdb.controller
 
 import login.enums.Status
 import login.model.User
@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController
 import javax.validation.Valid
 
 @RestController
-class UserController(@Autowired private val userService: UserService) {
+class UserController
+    (@Autowired private val userService: UserService) {
 
     @PostMapping("/users/register")
     fun registerUser(@RequestBody newUser: @Valid User?): Status {
