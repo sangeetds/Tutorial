@@ -1,4 +1,4 @@
-package demo;
+package login.enums;
 
 enum class Status {
     SUCCESS,
