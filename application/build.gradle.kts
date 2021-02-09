@@ -28,6 +28,10 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.4.0")
     implementation("org.springframework.boot:spring-boot-starter-web:2.4.0")
     implementation("org.springframework.boot:spring-boot-starter-validation:2.4.0")
+
+    implementation("com.adamratzman:spotify-api-kotlin-core:3.5.06")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
 }
 
 application {

@@ -8,5 +8,4 @@
  */
 
 rootProject.name = "isdb"
-include(":login")
-include(":application")
+include(":login", ":application", ":spotify")

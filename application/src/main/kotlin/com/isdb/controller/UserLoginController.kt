@@ -4,20 +4,16 @@ import login.enums.Status
 import login.model.User
 import login.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.web.bind.annotation.DeleteMapping
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 import javax.validation.Valid
 
 @RestController
-class UserController
+class UserLoginController
     (@Autowired private val userService: UserService) {
 
     @PostMapping("/users/register")
     fun registerUser(@RequestBody newUser: @Valid User?): Status {
         val users = this.userService.findAllUsers()
-        if (newUser!!.email == null) return Status.FAILURE
 
         for (user in users) {
             if (user!! == newUser && user.email == newUser.email) {
@@ -25,7 +21,7 @@ class UserController
                 return Status.USER_ALREADY_EXISTS
             }
         }
-        this.userService.saveUser(newUser)
+        println(this.userService.saveUser(newUser!!))
 
         return Status.SUCCESS
     }
@@ -65,5 +61,10 @@ class UserController
         this.userService.deleteAllUser()
 
         return Status.SUCCESS
+    }
+
+    @GetMapping("/users")
+    fun getAllUsers() {
+        print(this.userService.findAllUsers())
     }
 }

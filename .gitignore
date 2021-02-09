@@ -26,3 +26,9 @@ target/
 
 # Ignore Gradle build output directory
 build
+/application/src/main/kotlin/com/isdb/App.kt
+/application/src/main/resources/application.properties
+/application/src/main/resources/application.properties
+/application/src/main/kotlin/com/isdb/App.kt
+/spotify/src/main/kotlin/com/login/spotify/SpotifyCredentials.kt
+/spotify/src/main/resources/application.properties
