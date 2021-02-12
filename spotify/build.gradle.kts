@@ -9,6 +9,7 @@ plugins {
     kotlin("jvm")
     kotlin("kapt")
     kotlin("plugin.spring")
+    id("io.spring.dependency-management")
 
     // Apply the application plugin to add support for building a CLI application.
     application
@@ -32,11 +33,11 @@ dependencies {
 
     kapt("com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion")
 
-    implementation("org.springframework.boot:spring-boot:2.4.0")
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.4.0")
-
     //mysql and database
     implementation("mysql:mysql-connector-java:8.0.23")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.4.0")
+    implementation("org.springframework.boot:spring-boot-starter-validation:2.4.0")
+
 
     implementation(kotlin("reflect"))
 
