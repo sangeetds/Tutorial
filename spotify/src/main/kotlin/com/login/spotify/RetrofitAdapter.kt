@@ -1,6 +1,9 @@
 package com.login.spotify
 
-import com.login.spotify.config.SpotifyCredentials
+import com.login.spotify.config.SpotifyDetails.Companion.spotifyAuthApiUrl
+import com.login.spotify.config.SpotifyDetails.Companion.spotifyClientId
+import com.login.spotify.config.SpotifyDetails.Companion.spotifyClientSecret
+import com.login.spotify.config.SpotifyDetails.Companion.spotifyTrackApiUrl
 import com.login.spotify.endpoints.SpotifyEndpoints
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -17,13 +20,13 @@ class RetrofitAdapter {
                 .addLast(KotlinJsonAdapterFactory())
                 .build()
 
-            val intercept = if (action == Action.AUTH) BasicInterceptor(SpotifyCredentials.spotifyClientId, SpotifyCredentials.spotifyClientSecret)
+            val intercept = if (action == Action.AUTH) BasicInterceptor(spotifyClientId, spotifyClientSecret)
             else BasicInterceptor(token!!)
 
             val httpClient = OkHttpClient.Builder().addInterceptor(intercept).build()
 
             val retrofit: Retrofit = Retrofit.Builder()
-                .baseUrl(if (action == Action.AUTH) SpotifyCredentials.spotifyAuthApiUrl else SpotifyCredentials.spotifyTrackApiUrl)
+                .baseUrl(if (action == Action.AUTH) spotifyAuthApiUrl else spotifyTrackApiUrl)
                 .addConverterFactory(MoshiConverterFactory.create(moshi))
                 .client(httpClient)
                 .build()
