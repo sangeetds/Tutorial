@@ -8,5 +8,5 @@ data class Tracks(
 )
 
 data class Item(
-    @Json(name = "items") val i: List<SimpleTrack>
+    @Json(name = "items") val tracksList: List<SimpleTrack>
 )

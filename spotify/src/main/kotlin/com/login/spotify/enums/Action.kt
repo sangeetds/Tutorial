@@ -1,4 +1,4 @@
-package com.login.spotify
+package com.login.spotify.enums
 
 enum class Action {
     AUTH,

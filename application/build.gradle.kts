@@ -21,6 +21,7 @@ repositories {
 
 dependencies {
     implementation(project(":login"))
+    implementation(project(":spotify"))
 
     implementation(kotlin("reflect"))
 

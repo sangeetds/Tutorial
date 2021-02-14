@@ -1,5 +1,6 @@
-package com.login.spotify
+package com.login.spotify.utils
 
+import com.login.spotify.enums.Action
 import com.login.spotify.config.SpotifyDetails.Companion.spotifyAuthApiUrl
 import com.login.spotify.config.SpotifyDetails.Companion.spotifyClientId
 import com.login.spotify.config.SpotifyDetails.Companion.spotifyClientSecret
