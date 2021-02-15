@@ -16,6 +16,7 @@ plugins {
     kotlin("kapt") version "1.4.10"
     // Apply the application plugin to add support for building a CLI application.
     application
+
 }
 
 repositories {
@@ -42,6 +43,9 @@ dependencies {
 
     // Use the Kotlin JDK 8 standard library.
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation(project(":login"))
+    implementation(project(":spotify"))
+    implementation(project(":application"))
 
     // Use the Kotlin test library.
     testImplementation("org.jetbrains.kotlin:kotlin-test")
@@ -52,7 +56,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClassName = "isdb.AppKt"
+    mainClassName = "AppKt"
 }
 
 tasks.withType<KotlinCompile> {
@@ -64,4 +68,10 @@ tasks.withType<KotlinCompile> {
 tasks.test {
     useJUnit()
     useJUnitPlatform()
+}
+
+tasks.withType<Jar> {
+    manifest {
+        attributes["Main-Class"] = "AppKt"
+    }
 }

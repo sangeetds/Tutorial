@@ -11,8 +11,6 @@ plugins {
     kotlin("plugin.spring")
     id("io.spring.dependency-management")
 
-    // Apply the application plugin to add support for building a CLI application.
-    application
 }
 
 repositories {
@@ -49,9 +47,4 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-}
-
-application {
-    // Define the main class for the application.
-    mainClassName = "spotify.AppKt"
 }

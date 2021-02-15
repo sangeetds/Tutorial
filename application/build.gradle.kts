@@ -4,6 +4,8 @@
  * This generated file contains a sample Kotlin application project to get you started.
  */
 
+import org.gradle.jvm.tasks.Jar
+
 plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin.
     kotlin("jvm")
@@ -35,5 +37,11 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClassName = "application.AppKt"
+    mainClassName = "com.isdb.DemoApplicationKt"
+}
+
+tasks.withType<Jar> {
+    manifest {
+        attributes["Main-Class"] = "com.isdb.DemoApplicationKt"
+    }
 }

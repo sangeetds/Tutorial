@@ -7,9 +7,6 @@
 plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin.
     kotlin("jvm")
-
-    // Apply the application plugin to add support for building a CLI application.
-    application
 }
 
 repositories {
@@ -32,9 +29,4 @@ dependencies {
     implementation(kotlin("reflect"))
 
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.1")
-}
-
-application {
-    // Define the main class for the application.
-    mainClassName = "login.AppKt"
 }
