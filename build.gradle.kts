@@ -56,7 +56,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClassName = "AppKt"
+    mainClass.set("AppKt")
 }
 
 tasks.withType<KotlinCompile> {
@@ -68,10 +68,4 @@ tasks.withType<KotlinCompile> {
 tasks.test {
     useJUnit()
     useJUnitPlatform()
-}
-
-tasks.withType<Jar> {
-    manifest {
-        attributes["Main-Class"] = "AppKt"
-    }
 }

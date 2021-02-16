@@ -37,7 +37,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClassName = "com.isdb.DemoApplicationKt"
+    mainClass.set("com.isdb.DemoApplicationKt")
 }
 
 tasks.withType<Jar> {
