@@ -1,4 +1,4 @@
-package com.login.spotify.model
+package com.isdb.model
 
 import com.squareup.moshi.Json
 import javax.persistence.Id

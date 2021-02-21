@@ -1,4 +1,4 @@
-package com.login.spotify.utils
+package com.isdb.utils
 
 import okhttp3.Credentials
 import okhttp3.Interceptor

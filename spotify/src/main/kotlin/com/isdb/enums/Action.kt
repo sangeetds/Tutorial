@@ -1,4 +1,4 @@
-package com.login.spotify.enums
+package com.isdb.enums
 
 enum class Action {
     AUTH,

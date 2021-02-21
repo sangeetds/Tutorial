@@ -1,11 +1,11 @@
-package com.login.spotify.utils
+package com.isdb.utils
 
-import com.login.spotify.enums.Action
-import com.login.spotify.config.SpotifyDetails.Companion.spotifyAuthApiUrl
-import com.login.spotify.config.SpotifyDetails.Companion.spotifyClientId
-import com.login.spotify.config.SpotifyDetails.Companion.spotifyClientSecret
-import com.login.spotify.config.SpotifyDetails.Companion.spotifyTrackApiUrl
-import com.login.spotify.endpoints.SpotifyEndpoints
+import com.isdb.enums.Action
+import com.isdb.config.SpotifyDetails.Companion.spotifyAuthApiUrl
+import com.isdb.config.SpotifyDetails.Companion.spotifyClientId
+import com.isdb.config.SpotifyDetails.Companion.spotifyClientSecret
+import com.isdb.config.SpotifyDetails.Companion.spotifyTrackApiUrl
+import com.isdb.endpoints.SpotifyEndpoints
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient

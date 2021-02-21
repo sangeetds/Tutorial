@@ -1,8 +1,8 @@
-package login.service.impl
+package com.isdb.service.impl
 
-import login.model.User
-import login.repository.UserRepository
-import login.service.UserService
+import com.isdb.model.User
+import com.isdb.repository.UserRepository
+import com.isdb.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 

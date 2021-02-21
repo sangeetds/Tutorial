@@ -1,6 +1,6 @@
-package login.repository
+package com.isdb.repository
 
-import login.model.User
+import com.isdb.model.User
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 

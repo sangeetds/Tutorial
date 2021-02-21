@@ -33,6 +33,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-validation:2.4.0")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
+    implementation("org.springframework.security:spring-security-web:5.4.5")
 }
 
 application {

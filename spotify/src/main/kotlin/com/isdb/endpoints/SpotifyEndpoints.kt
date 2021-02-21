@@ -1,7 +1,7 @@
-package com.login.spotify.endpoints
+package com.isdb.endpoints
 
-import com.login.spotify.model.Authentications
-import com.login.spotify.model.Tracks
+import com.isdb.model.Authentications
+import com.isdb.model.Tracks
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.*

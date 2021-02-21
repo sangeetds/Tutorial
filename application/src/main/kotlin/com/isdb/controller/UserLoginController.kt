@@ -1,8 +1,8 @@
 package com.isdb.controller
 
-import login.enums.Status
-import login.model.User
-import login.service.UserService
+import com.isdb.enums.Status
+import com.isdb.model.User
+import com.isdb.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 import javax.validation.Valid

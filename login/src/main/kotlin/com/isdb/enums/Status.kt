@@ -1,4 +1,4 @@
-package login.enums;
+package com.isdb.enums;
 
 enum class Status {
     SUCCESS,

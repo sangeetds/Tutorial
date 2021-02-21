@@ -1,6 +1,6 @@
-package login.service
+package com.isdb.service
 
-import login.model.User
+import com.isdb.model.User
 
 interface UserService {
     fun findAllUsers(): MutableList<User?>

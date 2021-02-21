@@ -1,4 +1,4 @@
-package com.login.spotify.model
+package com.isdb.model
 
 data class Image(
     val height: Int,

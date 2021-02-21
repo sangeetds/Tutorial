@@ -3,7 +3,7 @@ package com.isdb.controller
 import com.isdb.mapper.TrackSongMapper.Companion.toSongs
 import com.isdb.model.Song
 import com.isdb.repository.SongsRepository
-import com.login.spotify.SpotifyAPI
+import com.isdb.SpotifyAPI
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.lang.Nullable

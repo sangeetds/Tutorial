@@ -3,9 +3,9 @@ package com.isdb
 import com.isdb.controller.UserLoginController
 import com.isdb.model.Song
 import com.isdb.repository.SongsRepository
-import login.model.User
-import login.repository.UserRepository
-import login.service.UserService
+import com.isdb.model.User
+import com.isdb.repository.UserRepository
+import com.isdb.service.UserService
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.domain.EntityScan

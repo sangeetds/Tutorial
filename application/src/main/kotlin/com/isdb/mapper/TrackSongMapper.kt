@@ -1,7 +1,7 @@
 package com.isdb.mapper
 
 import com.isdb.model.Song
-import com.login.spotify.model.SimpleTrack
+import com.isdb.model.SimpleTrack
 
 class TrackSongMapper {
     companion object {

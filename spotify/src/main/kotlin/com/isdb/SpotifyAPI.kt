@@ -1,12 +1,11 @@
-package com.login.spotify
+package com.isdb
 
-import com.login.spotify.endpoints.getToken
-import com.login.spotify.endpoints.getTrack
-import com.login.spotify.enums.Action
-import com.login.spotify.model.Authentications
-import com.login.spotify.model.SimpleTrack
-import com.login.spotify.model.Tracks
-import com.login.spotify.utils.RetrofitAdapter
+import com.isdb.endpoints.getToken
+import com.isdb.endpoints.getTrack
+import com.isdb.enums.Action
+import com.isdb.model.Authentications
+import com.isdb.model.SimpleTrack
+import com.isdb.utils.RetrofitAdapter
 
 class SpotifyAPI {
 
