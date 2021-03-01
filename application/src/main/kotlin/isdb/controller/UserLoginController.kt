@@ -1,4 +1,4 @@
-package com.isdb.controller
+package isdb.controller
 
 import com.isdb.enums.Status
 import com.isdb.model.User

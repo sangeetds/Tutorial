@@ -1,9 +1,9 @@
-package com.isdb
+package isdb
 
-import com.isdb.controller.UserLoginController
-import com.isdb.model.Song
+import isdb.controller.UserLoginController
+import isdb.model.Song
 import com.isdb.model.User
-import com.isdb.repository.SongsRepository
+import isdb.repository.SongsRepository
 import com.isdb.repository.UserRepository
 import com.isdb.service.UserService
 import org.springframework.boot.SpringApplication

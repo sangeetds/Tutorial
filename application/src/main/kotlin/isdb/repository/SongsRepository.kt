@@ -1,6 +1,6 @@
-package com.isdb.repository
+package isdb.repository
 
-import com.isdb.model.Song
+import isdb.model.Song
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface SongsRepository : JpaRepository<Song, String>

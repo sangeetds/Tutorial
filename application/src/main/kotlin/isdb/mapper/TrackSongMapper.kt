@@ -1,6 +1,6 @@
-package com.isdb.mapper
+package isdb.mapper
 
-import com.isdb.model.Song
+import isdb.model.Song
 import com.isdb.model.SimpleTrack
 
 class TrackSongMapper {

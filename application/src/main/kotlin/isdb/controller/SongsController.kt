@@ -1,8 +1,8 @@
-package com.isdb.controller
+package isdb.controller
 
-import com.isdb.mapper.TrackSongMapper.Companion.toSongs
-import com.isdb.model.Song
-import com.isdb.repository.SongsRepository
+import isdb.mapper.TrackSongMapper.Companion.toSongs
+import isdb.model.Song
+import isdb.repository.SongsRepository
 import com.isdb.SpotifyAPI
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity

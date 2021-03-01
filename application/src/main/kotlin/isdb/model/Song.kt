@@ -1,4 +1,4 @@
-package com.isdb.model
+package isdb.model
 
 import javax.persistence.*
 
