@@ -15,7 +15,7 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: 'kotlin'
 
 group = 'app-module'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.2-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
@@ -51,19 +51,5 @@ jar {
     }
 
     archiveBaseName.set("app-module")
-    archiveVersion.set("0.0.1")
-}
-
-task stage(type: Copy, dependsOn: [clean, build]) {
-    from jar.archivePath
-    into project.rootDir
-    rename {
-        'app-module.jar'
-    }
-}
-
-stage.mustRunAfter(clean)
-
-clean << {
-    project.file('app-module.jar').delete()
+    archiveVersion.set("0.0.2")
 }
