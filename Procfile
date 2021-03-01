@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar application/build/libs/app-module.jar
+web: java $JAVA_OPTS -jar b/app-module.jar
