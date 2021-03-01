@@ -20,7 +20,7 @@ plugins {
     java
 }
 
-group = "com.rmz"
+group = "com.isdb"
 version = "0.0.1-SNAPSHOT"
 
 repositories {
@@ -72,4 +72,9 @@ tasks.test {
 tasks.withType<BootJar> {
 	mainClassName = "com.isdb.ApplicationKt"
 	enabled = true
+}
+
+tasks.withType<Jar> {
+	archiveBaseName.set("app")
+	archiveVersion.set("0.0.1")
 }

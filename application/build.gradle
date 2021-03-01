@@ -49,4 +49,21 @@ jar {
                 'Main-Class': 'com.isdb.ApplicationKt'
         )
     }
+
+    archiveBaseName.set("app-module")
+    archiveVersion.set("0.0.1")
+}
+
+task stage(type: Copy, dependsOn: [clean, build]) {
+    from jar.archivePath
+    into project.rootDir
+    rename {
+        'app-module.jar'
+    }
+}
+
+stage.mustRunAfter(clean)
+
+clean << {
+    project.file('app.jar').delete()
 }
