@@ -75,6 +75,6 @@ tasks.withType<BootJar> {
 }
 
 tasks.withType<Jar> {
-	archiveBaseName.set("app")
+	archiveBaseName.set("app-module")
 	archiveVersion.set("0.0.1")
 }
