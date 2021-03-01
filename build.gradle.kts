@@ -7,22 +7,26 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
  */
 
 plugins {
-    id("org.springframework.boot") version "2.2.0.RELEASE" apply false
-    id("io.spring.dependency-management") version "1.0.8.RELEASE" apply false
+    id("java-library")
+    id("org.springframework.boot") version "2.4.3"
+    id("io.spring.dependency-management") version "1.0.11.RELEASE"
+    id("com.dorongold.task-tree") version "1.5"
 
     // Apply the Kotlin JVM plugin to add support for Kotlin.
     kotlin("jvm") version "1.4.30"
-    kotlin("plugin.spring") version "1.3.50" apply false
+    kotlin("plugin.spring") version "1.4.30"
     kotlin("kapt") version "1.4.10"
-    // Apply the application plugin to add support for building a CLI application.
-    application
 
+    java
 }
 
+group = "com.rmz"
+version = "0.0.1-SNAPSHOT"
+
 repositories {
-    // Use jcenter for resolving dependencies.
-    // You can declare any Maven/Ivy/file repository here.
-    jcenter()
+    mavenCentral()
+    maven { url = uri("https://repo.spring.io/milestone") }
+    maven { url = uri("https://repo.spring.io/snapshot") }
 }
 
 subprojects {
@@ -54,11 +58,6 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
 }
 
-application {
-    // Define the main class for the application.
-    mainClass.set("AppKt")
-}
-
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         jvmTarget = "1.8"
@@ -68,4 +67,9 @@ tasks.withType<KotlinCompile> {
 tasks.test {
     useJUnit()
     useJUnitPlatform()
+}
+
+tasks.withType<BootJar> {
+	mainClassName = "com.isdb.ApplicationKt"
+	enabled = true
 }

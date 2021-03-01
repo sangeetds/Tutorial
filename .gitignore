@@ -32,3 +32,4 @@ build
 /application/src/main/kotlin/com/isdb/App.kt
 /spotify/src/main/kotlin/com/login/spotify/SpotifyCredentials.kt
 /spotify/src/main/resources/application.properties
+/integration-module/src/main/java/com/isdb/config/SpotifyDetails.kt
