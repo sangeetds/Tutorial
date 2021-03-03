@@ -16,7 +16,7 @@ class SongsController(@Autowired val songsRepository: SongsRepository) {
     @GetMapping("tracks")
     fun getSongs(@Nullable @RequestParam("search") songName: String?): ResponseEntity<List<Song>> {
         songName?.let {
-            val ratedSongs = this.songsRepository.findAll()
+            val ratedSongs = this.songsRepository.findSongsByName(songName)
             val searchSongs = SpotifyAPI().getUserTrack(songName).toSongs()
 
             return ResponseEntity.ok().body(ratedSongs + searchSongs)
