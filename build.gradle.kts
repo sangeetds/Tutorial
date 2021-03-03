@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
     id("org.springframework.boot") version "2.4.3"
@@ -79,6 +80,6 @@ tasks.withType<Test> {
 }
 
 tasks.withType<BootJar> {
-	mainClass.set("com.isdb.ApplicationKt")
+	mainClass.set("com.isdb.IsdbBackendApplicationKt")
 	enabled = true
 }
