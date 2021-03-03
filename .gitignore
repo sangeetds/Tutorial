@@ -4,6 +4,7 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+*.DS_Store
 
 ### STS ###
 .apt_generated
@@ -45,3 +46,5 @@ build
 
 ### VS Code ###
 /src/main/kotlin/com/isdb/config/SpotifyDetails.kt
+
+src/main/resources
