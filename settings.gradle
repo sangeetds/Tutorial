@@ -1,5 +1,0 @@
-rootProject.name = 'springboot-gradle-multimodule'
-
-include 'app-module'
-include 'core-module'
-include 'integration-module'
