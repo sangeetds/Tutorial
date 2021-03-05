@@ -12,7 +12,7 @@ class UserLoginController
     (@Autowired private val userService: UserService) {
 
     @PostMapping("/users/register")
-    fun registerUser(@Valid @RequestBody newUser: User?): Status {
+    fun registerUser(@Valid @RequestBody newUser: User): Status {
         val users = this.userService.findAllUsers()
 
         for (user in users) {
@@ -22,15 +22,17 @@ class UserLoginController
             }
         }
 
+        this.userService.saveUser(newUser)
+
         return Status.SUCCESS
     }
 
     @PostMapping("/users/login")
-    fun loginUser(@Valid @RequestBody user: User?): Status {
+    fun loginUser(@Valid @RequestBody user: User): Status {
         val users = this.userService.findAllUsers()
 
         for (other in users) {
-            if (other!!.email == user!!.email && other.password == user.password) {
+            if (other!!.email == user.email && other.password == user.password) {
                 user.isLoggedIn = true
                 this.userService.saveUser(user)
                 return Status.SUCCESS
